@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
 
+const projects = require("./routes/api/projects");
+
 const app = express();
 
 // Bodyparser Middleware
@@ -27,6 +29,7 @@ mongoose
   .catch(err => console.log(err));
 
 // Use routes
+app.use("/api/projects", projects);
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {
