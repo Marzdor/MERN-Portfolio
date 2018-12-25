@@ -7,7 +7,7 @@ const ProjectSchema = new Schema({
     type: String,
     required: true
   },
-  imageName: {
+  imageBaseName: {
     type: String,
     required: true
   },

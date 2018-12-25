@@ -5,21 +5,23 @@ const Projects = props => {
 
   props.projects.forEach(project => {
     projectEle.push(
-      <section key={project.siteName}>
+      <section id={project._id} key={project.siteName}>
         <h4>{project.siteName}</h4>
-        <button>Edit</button>
-        <a href="/admin" id={project._id} onClick={deleteProject}>
+        <button id="edit" onClick={props.modalControle}>
+          Edit
+        </button>
+        <button id={project._id} onClick={deleteProject}>
           Delete
-        </a>
+        </button>
       </section>
     );
   });
 
   function deleteProject(e) {
-    console.log(e.target.id);
     fetch("/api/projects/" + e.target.id, { method: "delete" }).then(res => {
       res.json();
     });
+    window.location = "/admin";
   }
 
   return <div>{projectEle}</div>;

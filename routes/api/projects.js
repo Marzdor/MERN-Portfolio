@@ -20,8 +20,8 @@ router.get("/", (req, res) => {
 // @route GET api/projects
 // @desc  get spesific project
 // @access Public
-router.get("/edit=:name", (req, res) => {
-  Project.find({ name: req.params.name }).then(projects => res.json(projects));
+router.get("/edit=:id", (req, res) => {
+  Project.findById(req.params.id).then(projects => res.json(projects));
 });
 
 // @route POST api/projects
@@ -29,23 +29,19 @@ router.get("/edit=:name", (req, res) => {
 // @access Public
 router.post("/edit=:id", (req, res) => {
   const newData = {
-    name: req.body.name,
-    rarity: req.body.rarity,
-    location: req.body.location.split(","),
+    siteName: req.body.siteName,
+    imageBaseName: req.body.imageBaseName,
+    tags: req.body.tags.split(","),
+    url: req.body.url,
     description: req.body.description
   };
-  Project.findByIdAndUpdate(
-    req.params.id,
-    newData,
-    { new: true },
-    (err, Project) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.redirect("/edit");
-      }
+  Project.findByIdAndUpdate(req.params.id, newData, { new: true }, err => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect("/admin");
     }
-  );
+  });
 });
 
 // @route POST api/projects
@@ -54,13 +50,13 @@ router.post("/edit=:id", (req, res) => {
 router.post("/", (req, res) => {
   newProject = new Project({
     siteName: req.body.siteName,
-    imageName: req.body.imageName,
-    tags: req.body.tags,
+    imageBaseName: req.body.imageBaseName,
+    tags: req.body.tags.split(","),
     url: req.body.url,
     description: req.body.description
   });
 
-  newProject.save().then(project => res.json(project));
+  newProject.save().then(() => res.redirect("/admin"));
 });
 
 // @route DELETE api/projects/:id
