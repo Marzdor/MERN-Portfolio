@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 
+import Projects from "./Projects";
+
 class Work extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
+      page: "work",
       projects: []
     };
   }
@@ -15,12 +18,12 @@ class Work extends Component {
         return res.json();
       })
       .then(data => {
-        console.log(data);
+        this.setState({ projects: data });
       });
   }
 
   render() {
-    return <div>work</div>;
+    return <Projects projects={this.state.projects} page={this.state.page} />;
   }
 }
 

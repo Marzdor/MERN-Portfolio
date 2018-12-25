@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Projects from "./sub_admin/Projects";
+import Projects from "./Projects";
 import Create from "./sub_admin/Create";
 import Edit from "./sub_admin/Edit";
 
@@ -10,6 +10,7 @@ class Admin extends Component {
     this.state = {
       modals: { create: false, edit: false },
       isLoading: true,
+      page: "admin",
       projects: [],
       editProject: {}
     };
@@ -98,6 +99,7 @@ class Admin extends Component {
         <Projects
           modalControle={this.modalControle}
           projects={this.state.projects}
+          page={this.state.page}
         />
         {this.state.modals.edit && (
           <Edit
