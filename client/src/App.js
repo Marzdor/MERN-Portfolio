@@ -8,12 +8,41 @@ import Create from "./assests/components/sub_admin/Create";
 import Edit from "./assests/components/sub_admin/Edit";
 import Error from "./assests/components/Error";
 
+const tags = [
+  "JavaScript",
+  "CSS",
+  "HTML",
+  "React",
+  "MongoDB",
+  "Express",
+  "Node.js"
+];
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { textIdx: 0 };
+  }
+
+  componentDidMount() {
+    this.timeout = setInterval(() => {
+      let currentIdx = this.state.textIdx;
+      this.setState({ textIdx: currentIdx + 1 });
+    }, 2000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timeout);
+  }
   render() {
+    let changeTags = tags[this.state.textIdx % tags.length];
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Splash} />
+          <Route
+            exact
+            path="/"
+            render={props => <Splash tag={changeTags} {...props} />}
+          />
           <Route path="/work" component={Work} />
           {/* TODO Make admin paths require authentication to access */}
           <Route exact path="/admin" component={Admin} />
