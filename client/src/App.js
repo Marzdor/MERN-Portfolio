@@ -21,18 +21,33 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { textIdx: 0 };
+    this.next = this.next.bind(this);
   }
 
   componentDidMount() {
+    // fade effect for tags
+    let currentIdx = this.state.textIdx;
+    document.querySelector(".text-tag--splash").style.opacity = 1;
+    setTimeout(() => {
+      document.querySelector(".text-tag--splash").style.opacity = 0;
+    }, 2150);
     this.timeout = setInterval(() => {
-      let currentIdx = this.state.textIdx;
+      currentIdx = this.state.textIdx;
+      document.querySelector(".text-tag--splash").style.opacity = 1;
+      setTimeout(() => {
+        document.querySelector(".text-tag--splash").style.opacity = 0;
+      }, 2150);
       this.setState({ textIdx: currentIdx + 1 });
-    }, 2000);
+    }, 3000);
+    //
   }
 
   componentWillUnmount() {
     clearInterval(this.timeout);
   }
+
+  next(currentIdx) {}
+
   render() {
     let changeTags = tags[this.state.textIdx % tags.length];
     return (

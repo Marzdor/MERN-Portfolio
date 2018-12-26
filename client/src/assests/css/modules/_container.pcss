@@ -1,0 +1,14 @@
+.container {
+  @mixin atSmall {
+    user-select: none;
+  }
+  &-splash {
+    @mixin atSmall {
+      text-align: center;
+      padding-top: 30vh;
+    }
+    @mixin atLarge {
+      padding-top: 35vh;
+    }
+  }
+}
