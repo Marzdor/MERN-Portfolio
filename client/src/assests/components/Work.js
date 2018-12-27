@@ -8,7 +8,8 @@ class Work extends Component {
     this.state = {
       isLoading: true,
       page: "work",
-      projects: []
+      projects: [],
+      mobile: false
     };
   }
 
@@ -20,10 +21,24 @@ class Work extends Component {
       .then(data => {
         this.setState({ projects: data });
       });
+
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      this.setState({ mobile: true });
+    }
   }
 
   render() {
-    return <Projects projects={this.state.projects} page={this.state.page} />;
+    return (
+      <Projects
+        mobile={this.state.mobile}
+        projects={this.state.projects}
+        page={this.state.page}
+      />
+    );
   }
 }
 

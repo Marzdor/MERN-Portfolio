@@ -30,14 +30,22 @@ const Projects = props => {
   } else {
     props.projects.forEach(project => {
       projectEle.push(
-        <section key={project.siteName}>
+        <section className="container" key={project.siteName}>
           <h4>{project.siteName}</h4>
           <a href={project.url} target="_blank" rel="noopener noreferrer">
-            <img
-              src={image[project.imageBaseName + "_small.png"]}
-              srcSet={image[project.imageBaseName + ".png"] + " 1400w"}
-              alt="Thumbnail of website."
-            />
+            {props.mobile ? (
+              <img
+                className="container-img"
+                src={image[project.imageBaseName + "_small.png"]}
+                alt="Thumbnail of website."
+              />
+            ) : (
+              <img
+                className="container-img"
+                src={image[project.imageBaseName + ".png"]}
+                alt="Thumbnail of website."
+              />
+            )}
           </a>
           <h5>{project.tags}</h5>
           <p>{project.description}</p>

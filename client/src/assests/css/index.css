@@ -410,6 +410,13 @@ a {
 
 @media (min-width: 320px) {
 
+.container-img {
+      width: 100%
+  }
+  }
+
+@media (min-width: 320px) {
+
 .container-splash {
       text-align: center;
       padding-top: 30vh
