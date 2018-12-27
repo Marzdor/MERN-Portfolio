@@ -19,7 +19,7 @@ class Work extends Component {
         return res.json();
       })
       .then(data => {
-        this.setState({ projects: data });
+        this.setState({ projects: data, isLoading: false });
       });
 
     if (
@@ -36,6 +36,7 @@ class Work extends Component {
       <Projects
         mobile={this.state.mobile}
         projects={this.state.projects}
+        isLoading={this.state.isLoading}
         page={this.state.page}
       />
     );

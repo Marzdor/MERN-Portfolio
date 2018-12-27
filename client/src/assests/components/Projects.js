@@ -1,5 +1,6 @@
 import React from "react";
 
+// import all images
 function importAllImages(image) {
   let images = {};
   image.keys().map((item, index) => {
@@ -7,51 +8,64 @@ function importAllImages(image) {
   });
   return images;
 }
-
 const image = importAllImages(require.context("../images", false, /\.png$/));
+//
 
 const Projects = props => {
   const projectEle = [];
 
-  if (props.page === "admin") {
-    props.projects.forEach(project => {
-      projectEle.push(
-        <section id={project._id} key={project.siteName}>
-          <h4>{project.siteName}</h4>
-          <button id="edit" onClick={props.modalControle}>
-            Edit
-          </button>
-          <button id={project._id} onClick={deleteProject}>
-            Delete
-          </button>
-        </section>
-      );
-    });
-  } else {
-    props.projects.forEach(project => {
-      projectEle.push(
-        <section className="container" key={project.siteName}>
-          <h4>{project.siteName}</h4>
-          <a href={project.url} target="_blank" rel="noopener noreferrer">
-            {props.mobile ? (
-              <img
-                className="container-img"
-                src={image[project.imageBaseName + "_small.png"]}
-                alt="Thumbnail of website."
-              />
-            ) : (
-              <img
-                className="container-img"
-                src={image[project.imageBaseName + ".png"]}
-                alt="Thumbnail of website."
-              />
-            )}
-          </a>
-          <h5>{project.tags}</h5>
-          <p>{project.description}</p>
-        </section>
-      );
-    });
+  if (!props.isLoading) {
+    if (props.page === "admin") {
+      props.projects.forEach(project => {
+        projectEle.push(
+          <section id={project._id} key={project.siteName}>
+            <h4>{project.siteName}</h4>
+            <button id="edit" onClick={props.modalControle}>
+              Edit
+            </button>
+            <button id={project._id} onClick={deleteProject}>
+              Delete
+            </button>
+          </section>
+        );
+      });
+    } else {
+      props.projects.forEach(project => {
+        // create tage elements
+        const tagEle = [];
+        project.tags.forEach(tag => {
+          tagEle.push(
+            <h5 className="text-tag" key={project.siteName + " " + tag}>
+              {tag}
+            </h5>
+          );
+        });
+        //
+
+        projectEle.push(
+          <section className="container-project" key={project.siteName}>
+            <h4 className="text-title-sub">{project.siteName}</h4>
+            <a href={project.url} target="_blank" rel="noopener noreferrer">
+              {props.mobile ? (
+                <img
+                  className="container-img"
+                  src={image[project.imageBaseName + "_small.png"]}
+                  alt="Thumbnail of website."
+                />
+              ) : (
+                <img
+                  className="container-img"
+                  src={image[project.imageBaseName + ".png"]}
+                  alt="Thumbnail of website."
+                />
+              )}
+            </a>
+            <div className="container-tags">{tagEle}</div>
+            <p className="text-desc">{project.description}</p>
+          </section>
+        );
+      });
+    }
   }
 
   function deleteProject(e) {
@@ -61,7 +75,7 @@ const Projects = props => {
     window.location = "/admin";
   }
 
-  return <div>{projectEle}</div>;
+  return <div className="container container-work">{projectEle}</div>;
 };
 
 export default Projects;

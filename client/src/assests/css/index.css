@@ -392,6 +392,13 @@ a {
 
 @media (min-width: 320px) {
 
+.text-tag {
+      margin: 10px
+  }
+  }
+
+@media (min-width: 320px) {
+
 .text-tag--splash {
         font-size: 1.125rem;
         font-weight: 700;
@@ -399,6 +406,15 @@ a {
         width: 100px;
         transition: opacity 0.5s ease-out
     }
+  }
+
+@media (min-width: 320px) {
+
+.text-desc {
+      text-align: justify;
+      width: 90%;
+      margin: 0 auto 10px auto
+  }
   }
 
 @media (min-width: 320px) {
@@ -411,7 +427,8 @@ a {
 @media (min-width: 320px) {
 
 .container-img {
-      width: 100%
+      width: 80%;
+      margin: 10px auto 0 auto
   }
   }
 
@@ -429,6 +446,54 @@ a {
       padding-top: 35vh;
       width: 300px;
       margin: 0 auto
+  }
+  }
+
+@media (min-width: 320px) {
+
+.container-project {
+      text-align: center;
+      border-bottom: 15px solid #92a3aa;
+      background-color: #e2e7e9
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.container-project {
+      border: 5px solid #92a3aa;
+      margin: 5px;
+      transition: all 0.25s ease-out
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.container-project:hover {
+        margin: 0 -100px;
+        padding: 15px;
+        border: 15px solid #71858c;
+        border-radius: 50px;
+        background-color: #e1f6ff;
+        z-index: 1
+    }
+  }
+
+@media (min-width: 1024px) {
+
+.container-work {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 80%;
+      margin: 0 auto
+  }
+  }
+
+@media (min-width: 320px) {
+
+.container-tags {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr)
   }
   }
 

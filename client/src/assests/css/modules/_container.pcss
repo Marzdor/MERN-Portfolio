@@ -4,7 +4,8 @@
   }
   &-img {
     @mixin atSmall {
-      width: 100%;
+      width: 80%;
+      margin: 10px auto 0 auto;
     }
   }
   &-splash {
@@ -16,6 +17,42 @@
       padding-top: 35vh;
       width: 300px;
       margin: 0 auto;
+    }
+  }
+  &-project {
+    @mixin atSmall {
+      text-align: center;
+      border-bottom: 15px solid #92a3aa;
+      background-color: #e2e7e9;
+    }
+    @mixin atLarge {
+      border: 5px solid #92a3aa;
+      margin: 5px;
+      transition: all 0.25s ease-out;
+    }
+    &:hover {
+      @mixin atLarge {
+        margin: 0 -100px;
+        padding: 15px;
+        border: 15px solid #71858c;
+        border-radius: 50px;
+        background-color: #e1f6ff;
+        z-index: 1;
+      }
+    }
+  }
+  &-work {
+    @mixin atLarge {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  &-tags {
+    @mixin atSmall {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }

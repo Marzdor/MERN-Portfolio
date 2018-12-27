@@ -13,7 +13,7 @@ const Project = require("../../models/Projects");
 // @access Public
 router.get("/", (req, res) => {
   Project.find()
-    .sort({ name: 1 })
+    .sort({ siteName: 1 })
     .then(projects => res.json(projects));
 });
 

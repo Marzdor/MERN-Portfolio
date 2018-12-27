@@ -14,6 +14,9 @@
     }
   }
   &-tag {
+    @mixin atSmall {
+      margin: 10px;
+    }
     &--splash {
       @mixin atSmall {
         font-size: 1.125rem;
@@ -22,6 +25,13 @@
         width: 100px;
         transition: opacity 0.5s ease-out;
       }
+    }
+  }
+  &-desc {
+    @mixin atSmall {
+      text-align: justify;
+      width: 90%;
+      margin: 0 auto 10px auto;
     }
   }
 }
