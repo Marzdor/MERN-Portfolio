@@ -27,11 +27,9 @@ class Splash extends Component {
   }
 
   componentDidMount() {
-    // fade effect for tags
     this.startTimer();
-    //
   }
-
+  // fade effect for tag element
   startTimer() {
     this.setState({
       isOn: true,
@@ -66,6 +64,7 @@ class Splash extends Component {
     clearInterval(this.timerMain);
     clearInterval(this.timerSub);
   }
+  //
 
   render() {
     let changeTags = tags[this.state.textIdx % tags.length];
@@ -74,7 +73,13 @@ class Splash extends Component {
       <section className="container container-splash ">
         <h1 className="text-title">Max Ingersoll</h1>
         <h2 className="text-title-sub">a web dev</h2>
-        <p className="text-tag--splash">{changeTags}</p>
+        <p
+          className="text-tag--splash"
+          onMouseEnter={this.stopTimer}
+          onMouseLeave={this.startTimer}
+        >
+          {changeTags}
+        </p>
         <Link className="btn btn-splash" onClick={this.stopTimer} to="/work">
           View My Work
         </Link>

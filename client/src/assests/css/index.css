@@ -395,7 +395,8 @@ a {
 .text-tag--splash {
         font-size: 1.125rem;
         font-weight: 700;
-        margin: 15px 0 30px 0;
+        margin: 15px auto 30px auto;
+        width: 100px;
         transition: opacity 0.5s ease-out
     }
   }
@@ -418,7 +419,9 @@ a {
 @media (min-width: 1024px) {
 
 .container-splash {
-      padding-top: 35vh
+      padding-top: 35vh;
+      width: 300px;
+      margin: 0 auto
   }
   }
 
