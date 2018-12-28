@@ -46,19 +46,11 @@ const Projects = props => {
           <section className="container-project" key={project.siteName}>
             <h4 className="text-title-sub">{project.siteName}</h4>
             <a href={project.url} target="_blank" rel="noopener noreferrer">
-              {props.mobile ? (
-                <img
-                  className="container-img"
-                  src={image[project.imageBaseName + "_small.png"]}
-                  alt="Thumbnail of website."
-                />
-              ) : (
-                <img
-                  className="container-img"
-                  src={image[project.imageBaseName + ".png"]}
-                  alt="Thumbnail of website."
-                />
-              )}
+              <img
+                className="container-img"
+                src={image[project.imageBaseName + ".png"]}
+                alt="Thumbnail of website."
+              />
             </a>
             <div className="container-tags">{tagEle}</div>
             <p className="text-desc">{project.description}</p>

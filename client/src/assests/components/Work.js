@@ -34,6 +34,7 @@ class Work extends Component {
     }
   }
 
+  // Switch project being displayed
   switchEle(e) {
     let nextIndex;
     const len = this.state.projects.length;
@@ -59,6 +60,7 @@ class Work extends Component {
 
     this.setState({ curIndex: nextIndex });
   }
+  //
 
   render() {
     return (
@@ -72,7 +74,6 @@ class Work extends Component {
           />
         ) : (
           <Projects
-            mobile={this.state.mobile}
             projects={this.state.projects}
             isLoading={this.state.isLoading}
             page={this.state.page}
