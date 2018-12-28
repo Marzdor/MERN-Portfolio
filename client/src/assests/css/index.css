@@ -427,7 +427,7 @@ a {
 @media (min-width: 320px) {
 
 .container-img {
-      width: 80%;
+      width: 95%;
       margin: 10px auto 0 auto
   }
   }
@@ -452,9 +452,9 @@ a {
 @media (min-width: 320px) {
 
 .container-project {
+      display: grid;
       text-align: center;
-      border-bottom: 15px solid #92a3aa;
-      background-color: #e2e7e9
+      min-height: 100vh
   }
   }
 
@@ -523,4 +523,16 @@ a {
       .btn-splash:hover {
         border-radius: 20px;
       }
+  }
+
+@media (min-width: 320px) {
+
+.btn-nav {
+      font-size: 2rem;
+      height: 10vh;
+      width: 25vw;
+      font-weight: 900;
+      margin: 0 30px 0 30px;
+      background-color: #92a3aa
+  }
   }

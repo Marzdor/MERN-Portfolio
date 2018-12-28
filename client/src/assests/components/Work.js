@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Projects from "./Projects";
+import Mobile from "./Mobile";
 
 class Work extends Component {
   constructor(props) {
@@ -9,8 +10,10 @@ class Work extends Component {
       isLoading: true,
       page: "work",
       projects: [],
-      mobile: false
+      mobile: false,
+      curIndex: 0
     };
+    this.switchEle = this.switchEle.bind(this);
   }
 
   componentDidMount() {
@@ -31,14 +34,51 @@ class Work extends Component {
     }
   }
 
+  switchEle(e) {
+    let nextIndex;
+    const len = this.state.projects.length;
+    const cur = this.state.curIndex;
+    switch (e.target.id) {
+      case "left":
+        if (this.state.curIndex === 0) {
+          nextIndex = len - 1;
+        } else {
+          nextIndex = cur - 1;
+        }
+        break;
+      case "right":
+        if (cur + 1 === len) {
+          nextIndex = 0;
+        } else {
+          nextIndex = cur + 1;
+        }
+        break;
+      default:
+        break;
+    }
+
+    this.setState({ curIndex: nextIndex });
+  }
+
   render() {
     return (
-      <Projects
-        mobile={this.state.mobile}
-        projects={this.state.projects}
-        isLoading={this.state.isLoading}
-        page={this.state.page}
-      />
+      <div>
+        {this.state.mobile ? (
+          <Mobile
+            projects={this.state.projects}
+            isLoading={this.state.isLoading}
+            curIndex={this.state.curIndex}
+            switchEle={this.switchEle}
+          />
+        ) : (
+          <Projects
+            mobile={this.state.mobile}
+            projects={this.state.projects}
+            isLoading={this.state.isLoading}
+            page={this.state.page}
+          />
+        )}
+      </div>
     );
   }
 }
