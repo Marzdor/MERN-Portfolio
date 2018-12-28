@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 var bodyParser = require("body-parser");
-
+// TODO add authentication to delete update and create paths
 router.use(bodyParser.json()); // to support JSON-encoded bodies
 router.use(express.urlencoded({ extended: true })); // to support URL-encoded bodies
 
