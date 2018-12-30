@@ -8,16 +8,15 @@ const projects = require("./routes/api/projects");
 const app = express();
 
 // Bodyparser Middleware
-
 app.use(bodyParser.json());
 
+// basic auth
+const auth = require("./config/auth");
+app.use(auth);
+
 // DB Config
-let db;
-if (process.env.NODE_ENV === "production") {
-  db = process.env.mongodb;
-} else {
-  db = require("./config/keys").mongoURI;
-}
+
+const db = require("./config/keys").mongoURI;
 
 // Connect to Mongo
 mongoose
