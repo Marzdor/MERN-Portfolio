@@ -5,6 +5,8 @@ var bodyParser = require("body-parser");
 router.use(bodyParser.json()); // to support JSON-encoded bodies
 router.use(express.urlencoded({ extended: true })); // to support URL-encoded bodies
 
+const auth = require("../../auth");
+
 // Project Model
 const Project = require("../../models/Projects");
 
@@ -27,7 +29,7 @@ router.get("/edit=:id", (req, res) => {
 // @route POST api/projects
 // @desc  Edit a project
 // @access Public
-router.post("/edit=:id", (req, res) => {
+router.post("/edit=:id", auth, (req, res) => {
   const newData = {
     siteName: req.body.siteName,
     imageBaseName: req.body.imageBaseName,
@@ -47,7 +49,7 @@ router.post("/edit=:id", (req, res) => {
 // @route POST api/projects
 // @desc  Create a project
 // @access Public
-router.post("/", (req, res) => {
+router.post("/", auth, (req, res) => {
   newProject = new Project({
     siteName: req.body.siteName,
     imageBaseName: req.body.imageBaseName,
@@ -62,7 +64,7 @@ router.post("/", (req, res) => {
 // @route DELETE api/projects/:id
 // @desc  Delete a project
 // @access Public
-router.delete("/:id", (req, res) => {
+router.delete("/:id", auth, (req, res) => {
   Project.findById(req.params.id)
     .then(project => project.remove().then(() => res.json({ success: true })))
     .catch(err => res.status(404).json({ success: false }));

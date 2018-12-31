@@ -10,10 +10,6 @@ const app = express();
 // Bodyparser Middleware
 app.use(bodyParser.json());
 
-// basic auth
-const auth = require("./auth");
-app.use(auth);
-
 // DB Config
 let db;
 if (process.env.NODE_ENV === "production") {
