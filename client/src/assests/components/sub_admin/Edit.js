@@ -2,11 +2,15 @@ import React from "react";
 
 const Edit = props => {
   return (
-    <div>
-      <button id="close" onClick={props.modalControle}>
+    <div className="modal">
+      <button id="close" className="btn-splash" onClick={props.modalControle}>
         X
       </button>
-      <form action={"/api/projects/edit=" + props.project._id} method="post">
+      <form
+        className="modal-form"
+        action={"/api/projects/edit=" + props.project._id}
+        method="post"
+      >
         <label>Site Name</label>
         <input
           name="siteName"
@@ -51,7 +55,7 @@ const Edit = props => {
           onChange={props.editChange}
           required
         />
-        <input type="Submit" />
+        <input className="btn-splash" type="Submit" />
       </form>
     </div>
   );

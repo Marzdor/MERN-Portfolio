@@ -50,9 +50,10 @@ class Login extends React.Component {
     }
 
     return (
-      <div>
-        <p>You must log in to view the page</p>
-        <button onClick={this.login}>Log in</button>
+      <div className="container container-splash">
+        <button className="btn-splash" onClick={this.login}>
+          Please Sign In
+        </button>
       </div>
     );
   }

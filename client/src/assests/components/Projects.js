@@ -20,10 +20,18 @@ const Projects = props => {
         projectEle.push(
           <section id={project._id} key={project.siteName}>
             <h4>{project.siteName}</h4>
-            <button id="edit" onClick={props.modalControle}>
+            <button
+              id="edit"
+              className="btn-splash"
+              onClick={props.modalControle}
+            >
               Edit
             </button>
-            <button id={project._id} onClick={deleteProject}>
+            <button
+              id={project._id}
+              className="btn-splash"
+              onClick={deleteProject}
+            >
               Delete
             </button>
           </section>

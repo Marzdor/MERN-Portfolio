@@ -2,11 +2,11 @@ import React from "react";
 
 const Create = props => {
   return (
-    <div>
-      <button id="close" onClick={props.modalControle}>
+    <div className="modal">
+      <button id="close" className="btn-splash" onClick={props.modalControle}>
         X
       </button>
-      <form action="/api/projects" method="post">
+      <form className="modal-form" action="/api/projects" method="post">
         <label>Site Name</label>
         <input
           name="siteName"
@@ -46,7 +46,7 @@ const Create = props => {
           autoComplete="off"
           required
         />
-        <input type="Submit" />
+        <input className="btn-splash" type="Submit" />
       </form>
     </div>
   );
