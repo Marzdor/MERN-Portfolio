@@ -11,7 +11,9 @@ const auth = require("../../auth");
 const Project = require("../../models/Projects");
 
 app.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname, "../../client/src/index"), function(err) {
+  res.sendFile(path.join(__dirname, "clint", "build", "index.html"), function(
+    err
+  ) {
     if (err) {
       res.status(500).send(err);
     }
