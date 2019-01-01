@@ -13,11 +13,20 @@ import Create from "./assests/components/sub_admin/Create";
 import Edit from "./assests/components/sub_admin/Edit";
 import Error from "./assests/components/Error";
 
-const fakeAuth = {
+const auth = {
   isAuthenticated: false,
   authenticate(cb) {
-    this.isAuthenticated = true;
     setTimeout(cb, 100);
+    fetch("/api/projects/auth")
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        this.isAuthenticated = true;
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 };
 
@@ -26,7 +35,7 @@ class Login extends React.Component {
     redirectToReferrer: false
   };
   login = () => {
-    fakeAuth.authenticate(() => {
+    auth.authenticate(() => {
       this.setState(() => ({
         redirectToReferrer: true
       }));
@@ -53,7 +62,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      fakeAuth.isAuthenticated === true ? (
+      auth.isAuthenticated === true ? (
         <Component {...props} />
       ) : (
         <Redirect
