@@ -71,16 +71,20 @@ class Splash extends Component {
 
     return (
       <section className="container container-splash ">
-        <h1 className="text-title">Max Ingersoll</h1>
-        <h2 className="text-title-sub">a web dev</h2>
+        <h1 className="text-title splash">Max Ingersoll</h1>
+        <h2 className="text-title-sub splash">a web dev</h2>
         <p
-          className="text-tag--splash"
+          className="text-tag--splash splash"
           onMouseEnter={this.stopTimer}
           onMouseLeave={this.startTimer}
         >
           {changeTags}
         </p>
-        <Link className="btn btn-splash" onClick={this.stopTimer} to="/work">
+        <Link
+          className="btn btn-splash splash"
+          onClick={this.stopTimer}
+          to="/work"
+        >
           View My Work
         </Link>
       </section>

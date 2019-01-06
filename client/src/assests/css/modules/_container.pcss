@@ -62,6 +62,14 @@
       width: 80%;
       margin: 0 auto;
     }
+    &-PRO {
+      @mixin atLarge {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
   }
   &-tags {
     @mixin atSmall {

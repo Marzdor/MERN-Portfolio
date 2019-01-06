@@ -26,12 +26,26 @@ class Work extends Component {
       });
 
     if (
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       )
     ) {
-      this.setState({ mobile: true });
+      console.log(navigator.userAgent);
+      if (
+        /iPad/i.test(navigator.userAgent) &&
+        document.documentElement.clientWidth > 1024
+      ) {
+        this.setState({ mobile: false });
+      } else {
+        this.setState({ mobile: true });
+      }
     }
+    document
+      .querySelector(".container-work")
+      .classList.add("container-work-PRO");
+    document
+      .querySelector(".container-work")
+      .classList.remove("container-work");
   }
 
   // Switch project being displayed

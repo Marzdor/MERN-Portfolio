@@ -4,28 +4,29 @@
   }
   &-splash {
     @mixin atSmall {
-      border: 3px solid #92a3aa;
+      border: 3px solid black;
       padding: 10px 20px;
-      border-radius: 15px;
+      border-radius: 10px;
       font-weight: 600;
       transition: border-radius 1s ease-in, border 1s ease-in,
-        background-position 1.5s ease-out, font-size 1s ease-in;
+        background-position 1.5s ease-out, font-size 1s ease-in,
+        width 1s ease-in;
       background-image: linear-gradient(
         to bottom,
         transparent 50%,
         #92a3aa 50%
       );
-      width: 200px;
-      height: 100px;
+      width: 175px;
+      margin: 0 auto;
       background-size: 100% 200%;
     }
     @mixin atLarge {
-      border-radius: 10px;
       &:hover {
         border: 5px solid #71858c;
-        border-radius: 40px;
+        border-radius: 75px;
         background-position: 0 -100%;
         font-size: 1.5rem;
+        width: 250px;
       }
     }
   }
