@@ -22,14 +22,14 @@ const Projects = props => {
             <h4>{project.siteName}</h4>
             <button
               id="edit"
-              className="btn-splash"
+              className="modal-form-btn"
               onClick={props.modalControle}
             >
               Edit
             </button>
             <button
               id={project._id}
-              className="btn-splash"
+              className="modal-form-btn"
               onClick={deleteProject}
             >
               Delete

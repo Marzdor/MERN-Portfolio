@@ -3,9 +3,6 @@ import React from "react";
 const Create = props => {
   return (
     <div className="modal">
-      <button id="close" className="btn-splash" onClick={props.modalControle}>
-        X
-      </button>
       <form className="modal-form" action="/api/projects" method="post">
         <label>Site Name</label>
         <input
@@ -46,7 +43,14 @@ const Create = props => {
           autoComplete="off"
           required
         />
-        <input className="btn-splash" type="Submit" />
+        <input className=" modal-form-btn" type="Submit" />
+        <button
+          id="close"
+          className=" modal-form-btn"
+          onClick={props.modalControle}
+        >
+          Close
+        </button>
       </form>
     </div>
   );

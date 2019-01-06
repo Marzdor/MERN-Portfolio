@@ -90,7 +90,11 @@ class Admin extends Component {
   render() {
     return (
       <section className="container container-img">
-        <button id="create" className="btn-splash" onClick={this.modalControle}>
+        <button
+          id="create"
+          className="modal-form-btn"
+          onClick={this.modalControle}
+        >
           Create New
         </button>
         {this.state.modals.create && (

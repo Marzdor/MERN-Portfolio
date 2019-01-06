@@ -567,11 +567,20 @@ a {
 @media (min-width: 320px) {
 
 .btn-splash {
-      border: 3px solid black;
+      border: 3px solid #92a3aa;
       padding: 10px 20px;
       border-radius: 15px;
       font-weight: 600;
-      transition: border-radius 0.5s ease-in-out
+      transition: border-radius 1s ease-in, border 1s ease-in,
+        background-position 1.5s ease-out, font-size 1s ease-in;
+      background-image: linear-gradient(
+        to bottom,
+        transparent 50%,
+        #92a3aa 50%
+      );
+      width: 200px;
+      height: 100px;
+      background-size: 100% 200%
   }
   }
 
@@ -581,7 +590,10 @@ a {
       border-radius: 10px
   }
       .btn-splash:hover {
-        border-radius: 20px;
+        border: 5px solid #71858c;
+        border-radius: 40px;
+        background-position: 0 -100%;
+        font-size: 1.5rem;
       }
   }
 
@@ -606,16 +618,28 @@ a {
     width: 100%;
     height: 100%;
     z-index: 99;
-    background-color: #e2e7e9;
-
-    display: flex;
-    flex-direction: column
+    background-color: #e2e7e9
 }
   }
 
 @media (min-width: 320px) {
 
 .modal-form {
-      display: grid
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      width: 50%;
+      margin: 20vh auto
   }
   }
+
+.modal-form textarea {
+      height: 300px;
+      width: 40vw;
+      resize: none;
+      margin: 0 0 50px 0;
+    }
+
+.modal-form-btn {
+      max-width: 150px;
+    }
