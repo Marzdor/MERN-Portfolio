@@ -26,14 +26,14 @@ class Work extends Component {
       });
 
     if (
-      /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       )
     ) {
-      console.log(navigator.userAgent);
+      console.log(document.documentElement.clientWidth);
       if (
         /iPad/i.test(navigator.userAgent) &&
-        document.documentElement.clientWidth > 1024
+        document.documentElement.clientWidth >= 1024
       ) {
         this.setState({ mobile: false });
       } else {

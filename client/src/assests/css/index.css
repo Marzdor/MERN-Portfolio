@@ -581,9 +581,9 @@ a {
       padding: 10px 20px;
       border-radius: 10px;
       font-weight: 600;
-      transition: border-radius 1s ease-in, border 1s ease-in,
-        background-position 1.5s ease-out, font-size 1s ease-in,
-        width 1s ease-in;
+      transition: border-radius 0.6s ease-in, border 0.6s ease-in,
+        background-position 0.5s ease-in, font-size 0.6s ease-in,
+        width 0.6s ease-in;
       background-image: linear-gradient(
         to bottom,
         transparent 50%,
