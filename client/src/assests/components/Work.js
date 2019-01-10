@@ -30,7 +30,6 @@ class Work extends Component {
         navigator.userAgent
       )
     ) {
-      console.log(document.documentElement.clientWidth);
       if (
         /iPad/i.test(navigator.userAgent) &&
         document.documentElement.clientWidth >= 1024
