@@ -5,7 +5,7 @@
   &-splash {
     @mixin atSmall {
       border: 3px solid black;
-      padding: 10px 20px;
+      padding: 5px 20px;
       border-radius: 10px;
       font-weight: 600;
       transition: border-radius 0.6s ease-in, border 0.6s ease-in,
@@ -17,11 +17,11 @@
         #92a3aa 50%
       );
       width: 175px;
-      margin: 0 auto;
+      margin: 0 auto 10px auto;
       background-size: 100% 200%;
     }
-    @mixin atLarge {
-      &:hover {
+    &:hover {
+      @mixin atLarge {
         border: 5px solid #71858c;
         border-radius: 75px;
         background-position: 0 -100%;

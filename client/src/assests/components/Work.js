@@ -34,17 +34,17 @@ class Work extends Component {
         /iPad/i.test(navigator.userAgent) &&
         document.documentElement.clientWidth >= 1024
       ) {
+        document
+          .querySelector(".container-work")
+          .classList.add("container-work-PRO");
+        document
+          .querySelector(".container-work")
+          .classList.remove("container-work");
         this.setState({ mobile: false });
       } else {
         this.setState({ mobile: true });
       }
     }
-    document
-      .querySelector(".container-work")
-      .classList.add("container-work-PRO");
-    document
-      .querySelector(".container-work")
-      .classList.remove("container-work");
   }
 
   // Switch project being displayed

@@ -87,6 +87,22 @@ class Splash extends Component {
         >
           View My Work
         </Link>
+        <a
+          className="btn btn-splash splash"
+          href="https://www.linkedin.com/in/max-ingersoll-6a290ab0/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Linkedin
+        </a>
+        <a
+          className="btn btn-splash splash"
+          href="https://github.com/Marzdor"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </a>
       </section>
     );
   }

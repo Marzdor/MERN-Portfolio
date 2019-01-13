@@ -493,7 +493,7 @@ a {
 
 .container-splash {
       text-align: center;
-      padding-top: 30vh
+      padding-top: 25vh
   }
   }
 
@@ -578,7 +578,7 @@ a {
 
 .btn-splash {
       border: 3px solid black;
-      padding: 10px 20px;
+      padding: 5px 20px;
       border-radius: 10px;
       font-weight: 600;
       transition: border-radius 0.6s ease-in, border 0.6s ease-in,
@@ -590,19 +590,20 @@ a {
         #92a3aa 50%
       );
       width: 175px;
-      margin: 0 auto;
+      margin: 0 auto 10px auto;
       background-size: 100% 200%
   }
   }
 
 @media (min-width: 1024px) {
-      .btn-splash:hover {
+
+.btn-splash:hover {
         border: 5px solid #71858c;
         border-radius: 75px;
         background-position: 0 -100%;
         font-size: 1.5rem;
-        width: 250px;
-      }
+        width: 250px
+    }
   }
 
 @media (min-width: 320px) {
