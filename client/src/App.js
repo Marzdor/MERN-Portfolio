@@ -6,7 +6,8 @@ import {
   Redirect
 } from "react-router-dom";
 
-import Home from "./assests//components/Home";
+import Home from "./assests/components/Home";
+import Work from "./assests/components/Work";
 import Create from "./assests/components/sub_admin/Create";
 import Edit from "./assests/components/sub_admin/Edit";
 import Error from "./assests/components/Error";
@@ -57,23 +58,23 @@ class Login extends React.Component {
   }
 }
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      auth.isAuthenticated === true ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: "/login",
-            state: { from: props.location }
-          }}
-        />
-      )
-    }
-  />
-);
+// const PrivateRoute = ({ component: Component, ...rest }) => (
+//   <Route
+//     {...rest}
+//     render={props =>
+//       auth.isAuthenticated === true ? (
+//         <Component {...props} />
+//       ) : (
+//         <Redirect
+//           to={{
+//             pathname: "/login",
+//             state: { from: props.location }
+//           }}
+//         />
+//       )
+//     }
+//   />
+// );
 
 class App extends Component {
   render() {
@@ -81,8 +82,8 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/work" component={Work} />
           <Route path="/login" component={Login} />
-
           <Route path="/admin/create" component={Create} />
           <Route path="/admin/edit" component={Edit} />
           <Route component={Error} />

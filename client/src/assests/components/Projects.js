@@ -1,13 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-import Header from "./Header";
-
-const Home = () => {
+const Projects = () => {
   return (
     <div>
-      <Header title={""} />
       <section>
+        <h2>Site Name</h2>
+        {/* use a list???? or naw */}
+        <ul>
+          <h4>Tech</h4>
+          <li>HTML</li>
+          <li>HTML</li>
+          <li>HTML</li>
+          <li>HTML</li>
+          <li>HTML</li>
+        </ul>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam luctus
           odio ac sollicitudin tristique. Fusce molestie ipsum non sapien
@@ -16,17 +22,17 @@ const Home = () => {
           nec ipsum sit amet tortor semper consectetur. Interdum et malesuada
           fames ac ante ipsum primis in faucibus. Donec a quam nec erat
           tristique bibendum sit amet vel nunc. Aliquam porta consectetur nulla
-          ut lacinia. Nam eu lorem quis libero posuere facilisis in sed lorem.
-          Nulla tristique ullamcorper ultrices. Donec vehicula libero sit amet
-          augue dapibus scelerisque. Donec non tincidunt elit. Donec non est sed
-          nisl molestie dapibus nec et lorem. Donec mattis, quam nec iaculis
-          venenatis, nunc felis auctor neque, vel ullamcorper tellus nisi ac
-          sem. Integer luctus ultricies nulla ac viverra.
+          ut lacinia.
         </p>
-        <Link to="/work">View My Projects</Link>
+        <a href="/" target="_blank" rel="noopener noreferrer">
+          Code
+        </a>
+        <a href="/" target="_blank" rel="noopener noreferrer">
+          Live
+        </a>
       </section>
     </div>
   );
 };
 
-export default Home;
+export default Projects;
