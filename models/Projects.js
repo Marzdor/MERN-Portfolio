@@ -7,16 +7,12 @@ const ProjectSchema = new Schema({
     type: String,
     required: true
   },
-  imageBaseName: {
-    type: String,
-    required: true
-  },
-  tags: {
+  tech: {
     type: Array,
     required: true
   },
-  url: {
-    type: String,
+  urls: {
+    type: Object,
     required: true
   },
   description: {

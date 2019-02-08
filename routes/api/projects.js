@@ -36,9 +36,8 @@ router.get("/edit=:id", (req, res) => {
 router.post("/edit=:id", auth, (req, res) => {
   const newData = {
     siteName: req.body.siteName,
-    imageBaseName: req.body.imageBaseName,
-    tags: req.body.tags.split(","),
-    url: req.body.url,
+    tech: req.body.tech.split(","),
+    urls: { live: req.body.live, code: req.body.code },
     description: req.body.description
   };
   Project.findByIdAndUpdate(req.params.id, newData, { new: true }, err => {
@@ -56,9 +55,8 @@ router.post("/edit=:id", auth, (req, res) => {
 router.post("/", auth, (req, res) => {
   newProject = new Project({
     siteName: req.body.siteName,
-    imageBaseName: req.body.imageBaseName,
-    tags: req.body.tags.split(","),
-    url: req.body.url,
+    tech: req.body.tech.split(","),
+    urls: { live: req.body.live, code: req.body.code },
     description: req.body.description
   });
 
