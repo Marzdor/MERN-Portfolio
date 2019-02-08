@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 const Header = props => {
   return (
     <header>
-      <Link to="/">{"Max Ingersoll" + props.title}</Link>
+      <Link to="/">
+        Max Ingersoll
+        <hr />
+        <p>{props.title}</p>
+      </Link>
       <section>
         <a
           href="https://github.com/Marzdor"

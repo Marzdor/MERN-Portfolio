@@ -372,11 +372,99 @@ a {
   text-decoration: none;
 }
 
-.icon {
-  width: 100px;
-  height: 100px;
-  margin: 5px;
+@media (min-width: 320px) {
+
+header {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto
 }
+  }
+
+@media (min-width: 600px) {
+
+header {
+    flex-direction: row-reverse;
+    max-width: 300px;
+    margin: 20px 0
+}
+  }
+
+@media (min-width: 1024px) {
+
+header {
+    flex-direction: column;
+    margin: 20px
+}
+  }
+
+@media (min-width: 320px) {
+
+header section {
+      align-self: center
+  }
+  }
+
+@media (min-width: 600px) {
+
+header section {
+      display: flex;
+      flex-direction: column;
+      margin: auto
+  }
+  }
+
+@media (min-width: 1024px) {
+
+header section {
+      flex-direction: row
+  }
+  }
+
+@media (min-width: 320px) {
+
+header p {
+      font-size: 2rem;
+      margin: 0 0 5px 0
+  }
+  }
+
+@media (min-width: 320px) {
+
+header a {
+      font-size: 2.5rem;
+      color: #000;
+      text-align: center;
+      margin: 0
+  }
+  }
+
+@media (min-width: 320px) {
+
+header a hr {
+        margin: 5px auto;
+        justify-self: center;
+        width: 90%
+    }
+  }
+
+@media (min-width: 600px) {
+
+header a hr {
+        margin: 5px auto;
+        justify-self: center;
+        width: 100%
+    }
+  }
+
+@media (min-width: 320px) {
+
+.icon {
+    width: 25px;
+    height: 25px;
+    margin: 5px
+}
+  }
 
 .icon--git {
     content: url(../images/iconmonstr-github-3.svg);
