@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const ProjectSchema = new Schema({
-  siteName: {
+  name: {
     type: String,
     required: true
   },

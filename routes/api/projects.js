@@ -19,7 +19,7 @@ router.get("/auth", auth, (req, res) => {
 // @access Public
 router.get("/", (req, res) => {
   Project.find()
-    .sort({ siteName: 1 })
+    .sort({ name: 1 })
     .then(projects => res.json(projects));
 });
 
@@ -35,7 +35,7 @@ router.get("/edit=:id", (req, res) => {
 // @access Public
 router.post("/edit=:id", auth, (req, res) => {
   const newData = {
-    siteName: req.body.siteName,
+    name: req.body.name,
     tech: req.body.tech.split(","),
     urls: { live: req.body.live, code: req.body.code },
     description: req.body.description
@@ -54,7 +54,7 @@ router.post("/edit=:id", auth, (req, res) => {
 // @access Public
 router.post("/", auth, (req, res) => {
   newProject = new Project({
-    siteName: req.body.siteName,
+    name: req.body.name,
     tech: req.body.tech.split(","),
     urls: { live: req.body.live, code: req.body.code },
     description: req.body.description
