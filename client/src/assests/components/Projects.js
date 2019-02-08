@@ -12,25 +12,29 @@ const Projects = props => {
     }
 
     siteElements.push(
-      <section key={props.sites[site].name}>
+      <section className="project" key={props.sites[site].name}>
         <h2>{props.sites[site].name}</h2>
+        <p>{props.sites[site].description}</p>
         <h4>Tech</h4>
         <ul>{techElements}</ul>
-        <p>{props.sites[site].description}</p>
-        <a
-          href={props.sites[site].urls.code}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code
-        </a>
-        <a
-          href={props.sites[site].urls.live}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Live
-        </a>
+        <div>
+          <a
+            className="btn btn--project"
+            href={props.sites[site].urls.code}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Code
+          </a>
+          <a
+            className="btn btn--project"
+            href={props.sites[site].urls.live}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live
+          </a>
+        </div>
       </section>
     );
   }
