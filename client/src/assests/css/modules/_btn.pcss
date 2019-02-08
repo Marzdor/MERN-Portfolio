@@ -1,0 +1,30 @@
+.btn {
+  @mixin atSmall {
+    background-color: #b7c4c8;
+    box-shadow: 0 5px 0 #93a7ac;
+    color: #000;
+    padding: 1em 1.5em;
+    border: 2px solid #93a7ac;
+    text-transform: uppercase;
+    align-self: center;
+    margin: 10px 0;
+  }
+  &:hover {
+    background-color: #a5b6ba;
+    cursor: pointer;
+  }
+
+  &:active {
+    box-shadow: none;
+    top: 5px;
+  }
+  &--project {
+    @mixin atSmall {
+      min-width: 100px;
+      height: 30px;
+      padding: 5px;
+      text-align: center;
+      margin: 20px 10px;
+    }
+  }
+}

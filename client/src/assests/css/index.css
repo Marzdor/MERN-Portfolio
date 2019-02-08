@@ -374,10 +374,155 @@ a {
 
 @media (min-width: 320px) {
 
+.icon {
+    width: 25px;
+    height: 25px;
+    margin: 5px
+}
+  }
+
+.icon--git {
+    content: url(../images/iconmonstr-github-3.svg);
+  }
+
+.icon--link {
+    content: url(../images/iconmonstr-linkedin-3.svg);
+  }
+
+.icon--file {
+    content: url(../images/iconmonstr-file-33.svg);
+  }
+
+@media (min-width: 320px) {
+
+.project {
+    display: flex;
+    flex-direction: column
+}
+  }
+
+@media (min-width: 1024px) {
+
+.project {
+    width: calc(100% - 300px);
+    margin: 0 0 0 auto
+}
+  }
+
+@media (min-width: 320px) {
+
+.project h2 {
+      text-align: center
+  }
+  }
+
+@media (min-width: 320px) {
+
+.project h4 {
+      text-align: center;
+      margin: 0
+  }
+  }
+
+@media (min-width: 320px) {
+
+.project ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr)
+  }
+  }
+
+@media (min-width: 320px) {
+
+.project p {
+      line-height: 1.5;
+      margin: 0 auto 10px auto;
+      width: 90%
+  }
+  }
+
+@media (min-width: 320px) {
+
+.project div {
+      margin: 20px auto
+  }
+  }
+
+@media (min-width: 320px) {
+
+.btn {
+    background-color: #b7c4c8;
+    box-shadow: 0 5px 0 #93a7ac;
+    color: #000;
+    padding: 1em 1.5em;
+    border: 2px solid #93a7ac;
+    text-transform: uppercase;
+    align-self: center;
+    margin: 10px 0
+}
+  }
+
+.btn:hover {
+    background-color: #a5b6ba;
+    cursor: pointer;
+  }
+
+.btn:active {
+    box-shadow: none;
+    top: 5px;
+  }
+
+@media (min-width: 320px) {
+
+.btn--project {
+      min-width: 100px;
+      height: 30px;
+      padding: 5px;
+      text-align: center;
+      margin: 20px 10px
+  }
+  }
+
+@media (min-width: 320px) {
+
+.home {
+    display: flex;
+    flex-direction: column
+}
+  }
+
+@media (min-width: 600px) {
+
+.home {
+    margin: 40px auto;
+    max-width: 540px
+}
+  }
+
+@media (min-width: 320px) {
+
+.home h2 {
+      text-decoration: underline;
+      margin: 0;
+      text-align: center
+  }
+  }
+
+@media (min-width: 320px) {
+
+.home p {
+      line-height: 1.5;
+      margin: 10px auto;
+      width: 85%
+  }
+  }
+
+@media (min-width: 320px) {
+
 header {
     display: flex;
     flex-direction: column;
-    margin: 20px auto
+    margin: 20px auto 0 auto
 }
   }
 
@@ -386,15 +531,14 @@ header {
 header {
     flex-direction: row-reverse;
     max-width: 300px;
-    margin: 20px 0
+    margin: 20px 0 0 0
 }
   }
 
 @media (min-width: 1024px) {
 
 header {
-    flex-direction: column;
-    margin: 20px
+    flex-direction: column
 }
   }
 
@@ -455,25 +599,4 @@ header a hr {
         justify-self: center;
         width: 100%
     }
-  }
-
-@media (min-width: 320px) {
-
-.icon {
-    width: 25px;
-    height: 25px;
-    margin: 5px
-}
-  }
-
-.icon--git {
-    content: url(../images/iconmonstr-github-3.svg);
-  }
-
-.icon--link {
-    content: url(../images/iconmonstr-linkedin-3.svg);
-  }
-
-.icon--file {
-    content: url(../images/iconmonstr-file-33.svg);
   }

@@ -1,0 +1,39 @@
+.project {
+  @mixin atSmall {
+    display: flex;
+    flex-direction: column;
+  }
+  @mixin atLarge {
+    width: calc(100% - 300px);
+    margin: 0 0 0 auto;
+  }
+  & h2 {
+    @mixin atSmall {
+      text-align: center;
+    }
+  }
+  & h4 {
+    @mixin atSmall {
+      text-align: center;
+      margin: 0;
+    }
+  }
+  & ul {
+    @mixin atSmall {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  & p {
+    @mixin atSmall {
+      line-height: 1.5;
+      margin: 0 auto 10px auto;
+      width: 90%;
+    }
+  }
+  & div {
+    @mixin atSmall {
+      margin: 20px auto;
+    }
+  }
+}
