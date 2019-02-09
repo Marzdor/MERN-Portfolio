@@ -353,12 +353,12 @@ template {
 }
 
 body {
+  background-color: #e2e7e9;
+  color: #08090a;
+  font-family: "Open Sans", sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  font-family: "Open Sans", sans-serif;
-  color: #08090a;
-  background-color: #e2e7e9;
 }
 
 input:focus,
@@ -375,9 +375,9 @@ a {
 @media (min-width: 320px) {
 
 .icon {
-    width: 25px;
     height: 25px;
-    margin: 5px
+    margin: 5px;
+    width: 25px
 }
   }
 
@@ -406,34 +406,34 @@ a {
 
 #projects {
     background-color: #b7c4c8;
-    margin: 0px auto;
-    padding: 20px;
     border: 4px solid #93a7ac;
     border-radius: 15px;
-    max-width: 562px
+    margin: 0px auto;
+    max-width: 562px;
+    padding: 20px
 }
   }
 
 @media (min-width: 1024px) {
 
 #projects {
-    max-width: 915px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 915px
 }
   }
 
 @media (min-width: 320px) {
 
 .project {
-    display: flex;
-    flex-direction: column;
     background-color: #e2e7e9;
-    margin: 15px auto;
     border: 4px solid #93a7ac;
     border-radius: 15px;
-    padding: 2.5px;
-    max-width: 450px
+    display: flex;
+    flex-direction: column;
+    margin: 15px auto;
+    max-width: 450px;
+    padding: 2.5px
 }
   }
 
@@ -461,8 +461,8 @@ a {
 @media (min-width: 320px) {
 
 .project h4 {
-      text-align: center;
-      margin: 0
+      margin: 0;
+      text-align: center
   }
   }
 
@@ -493,14 +493,14 @@ a {
 @media (min-width: 320px) {
 
 .btn {
+    align-self: center;
     background-color: #b7c4c8;
+    border: 2px solid #93a7ac;
     box-shadow: 0 5px 0 #93a7ac;
     color: #000;
+    margin: 10px 0;
     padding: 1em 1.5em;
-    border: 2px solid #93a7ac;
-    text-transform: uppercase;
-    align-self: center;
-    margin: 10px 0
+    text-transform: uppercase
 }
   }
 
@@ -517,13 +517,13 @@ a {
 @media (min-width: 320px) {
 
 .btn--project {
-      min-width: 100px;
-      height: 30px;
-      padding: 5px;
-      margin: 20px 10px;
       background-color: #e2e7e9;
+      border: 2px solid #879da3;
       box-shadow: 0 5px 0 #879da3;
-      border: 2px solid #879da3
+      height: 30px;
+      margin: 20px 10px;
+      min-width: 100px;
+      padding: 5px
   }
   }
 
@@ -563,6 +563,40 @@ a {
 
 @media (min-width: 320px) {
 
+.home {
+    display: flex;
+    flex-direction: column
+}
+  }
+
+@media (min-width: 600px) {
+
+.home {
+    margin: 40px auto;
+    max-width: 540px
+}
+  }
+
+@media (min-width: 320px) {
+
+.home h2 {
+      margin: 0;
+      text-align: center;
+      text-decoration: underline
+  }
+  }
+
+@media (min-width: 320px) {
+
+.home p {
+      line-height: 1.5;
+      margin: 10px auto;
+      width: 85%
+  }
+  }
+
+@media (min-width: 320px) {
+
 header {
     display: flex;
     flex-direction: column;
@@ -574,8 +608,8 @@ header {
 
 header {
     flex-direction: row-reverse;
-    max-width: 300px;
-    margin: 20px auto 0 auto
+    margin: 20px auto 0 auto;
+    max-width: 300px
 }
   }
 
@@ -583,8 +617,8 @@ header {
 
 header {
     flex-direction: row;
-    max-width: 535px;
-    margin: 20px auto
+    margin: 20px auto;
+    max-width: 535px
 }
   }
 
@@ -622,10 +656,10 @@ header p {
 @media (min-width: 320px) {
 
 header a {
-      font-size: 2.5rem;
       color: #000;
-      text-align: center;
-      margin: 0
+      font-size: 2.5rem;
+      margin: 0;
+      text-align: center
   }
   }
 
@@ -647,8 +681,8 @@ header a p {
 @media (min-width: 320px) {
 
 header a hr {
-        margin: 5px auto;
         justify-self: center;
+        margin: 5px auto;
         width: 90%
     }
   }
@@ -656,8 +690,8 @@ header a hr {
 @media (min-width: 600px) {
 
 header a hr {
-        margin: 5px auto;
         justify-self: center;
+        margin: 5px auto;
         width: 100%
     }
   }

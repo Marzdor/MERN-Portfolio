@@ -6,29 +6,28 @@
   }
   @mixin atMedium {
     background-color: #b7c4c8;
-    margin: 0px auto;
-    padding: 20px;
     border: 4px solid #93a7ac;
     border-radius: 15px;
+    margin: 0px auto;
     max-width: 562px;
+    padding: 20px;
   }
   @mixin atLarge {
-    max-width: 915px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    max-width: 915px;
   }
 }
-
 .project {
   @mixin atSmall {
-    display: flex;
-    flex-direction: column;
     background-color: #e2e7e9;
-    margin: 15px auto;
     border: 4px solid #93a7ac;
     border-radius: 15px;
-    padding: 2.5px;
+    display: flex;
+    flex-direction: column;
+    margin: 15px auto;
     max-width: 450px;
+    padding: 2.5px;
   }
   @mixin atMedium {
     max-width: 500px;
@@ -43,8 +42,8 @@
   }
   & h4 {
     @mixin atSmall {
-      text-align: center;
       margin: 0;
+      text-align: center;
     }
   }
   & ul {
