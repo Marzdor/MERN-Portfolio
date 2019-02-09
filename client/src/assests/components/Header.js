@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import r from "../files/Max_Ingersoll_Resume.pdf";
 
 const Header = props => {
   return (
@@ -26,8 +27,12 @@ const Header = props => {
         >
           Linkedin
         </a>
-        {/* TODO get resume to download */}
-        <a href="/" className="icon icon--file">
+
+        <a
+          href="../files/Max_Ingersoll_Resume.pdf"
+          download
+          className="icon icon--file"
+        >
           Resume
         </a>
       </section>
