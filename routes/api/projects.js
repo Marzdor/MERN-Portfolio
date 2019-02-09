@@ -10,10 +10,6 @@ const auth = require("../../auth");
 // Project Model
 const Project = require("../../models/Projects");
 
-router.get("/auth", auth, (req, res) => {
-  res.json({ success: true });
-});
-
 // @route GET api/projects
 // @desc  get all projects
 // @access Public
