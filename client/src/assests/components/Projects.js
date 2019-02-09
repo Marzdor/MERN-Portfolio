@@ -39,7 +39,7 @@ const Projects = props => {
     );
   }
 
-  return <div>{siteElements}</div>;
+  return <div id="projects">{siteElements}</div>;
 };
 
 export default Projects;

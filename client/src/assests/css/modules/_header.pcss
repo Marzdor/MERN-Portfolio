@@ -7,10 +7,12 @@ header {
   @mixin atMedium {
     flex-direction: row-reverse;
     max-width: 300px;
-    margin: 20px 0 0 0;
+    margin: 20px auto 0 auto;
   }
   @mixin atLarge {
-    flex-direction: column;
+    flex-direction: row;
+    max-width: 535px;
+    margin: 20px auto;
   }
   & section {
     @mixin atSmall {
@@ -38,7 +40,15 @@ header {
       text-align: center;
       margin: 0;
     }
-
+    @mixin atLarge {
+      display: flex;
+    }
+    & p {
+      @mixin atLarge {
+        line-height: 1.5;
+        margin: 0 0 0 20px;
+      }
+    }
     & hr {
       @mixin atSmall {
         margin: 5px auto;
@@ -49,6 +59,9 @@ header {
         margin: 5px auto;
         justify-self: center;
         width: 100%;
+      }
+      @mixin atLarge {
+        display: none;
       }
     }
   }

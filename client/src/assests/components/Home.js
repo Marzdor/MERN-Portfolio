@@ -5,7 +5,7 @@ import Header from "./Header";
 
 const Home = () => {
   return (
-    <div>
+    <div id="body">
       <Header title={""} />
       <section className="home">
         <h2>About</h2>
@@ -16,7 +16,7 @@ const Home = () => {
         </p>
         <p>
           I’m currently working toward a Bachelors Degree in Computer Science.
-          while I continue to build my skills in the the web development
+          While I continue to build my skills in the the web development
           ecosystem.
         </p>
         <Link className="btn" to="/work">
